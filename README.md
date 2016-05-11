@@ -1,7 +1,7 @@
 # dotfiles
 A place to keep track of my dotfiles.  
 
-Setup scripts and some of the stuff stolen from [https://github.com/gelus](gelus)!  
+Setup scripts and some of the stuff stolen from [gelus](https://github.com/gelus)!  
 
 ### quick setup
 ```
