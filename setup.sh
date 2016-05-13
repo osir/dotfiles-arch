@@ -9,7 +9,7 @@ if [ "$mode" = "clean" ]; then
   echo "Removing links:"
   for i in "${!links[@]}"
   do
-  echo "rm ${!links[$i]}"
+  echo "rm ${links[$i]}"
     rm ${links[$i]}
   done
 else
