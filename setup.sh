@@ -1,7 +1,7 @@
 declare -A links=( 
-  [xresources/.Xresources]=~/.Xresources
-  [i3]=~/.config/i3
-  [dunst]=~/.config/dunst
+  [home/.Xresources]=~/.Xresources
+  [home/.config/i3]=~/.config/i3
+  [homt/.config/dunst]=~/.config/dunst
 )
 
 mode=$1
