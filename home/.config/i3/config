@@ -221,6 +221,9 @@ focus_follows_mouse no
 bindsym $mod+p exec scrot ~/screenshots/$(date +"%a-%d-%b-%H:%M:%S.jpg")
 bindsym $mod+shift+p exec scrot -s ~/screenshots/$(date +"%a-%d-%b-%H:%M:%S.jpg")
 
+# make mod+b hide the cursor in the top right corner
+bindsym $mod+b exec xdotool mousemove 1920 0
+
 # autoexec
 
 # set the wallpaper image
