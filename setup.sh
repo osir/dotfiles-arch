@@ -2,7 +2,8 @@ declare -A links=(
   [home/.Xresources]=~/.Xresources
   [home/.zshrc]=~/.zshrc
   [home/.config/i3]=~/.config/i3
-  [homt/.config/dunst]=~/.config/dunst
+  [home/.config/dunst]=~/.config/dunst
+  [home/.oh-my-zsh/custom]=~/.oh-my-zsh/custom
 )
 
 mode=$1
