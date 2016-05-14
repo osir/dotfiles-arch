@@ -1,5 +1,6 @@
 declare -A links=( 
   [home/.Xresources]=~/.Xresources
+  [home/.zshrc]=~/.zshrc
   [home/.config/i3]=~/.config/i3
   [homt/.config/dunst]=~/.config/dunst
 )
