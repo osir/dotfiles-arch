@@ -4,6 +4,8 @@ declare -A links=(
   [home/.config/i3]=~/.config/i3
   [home/.config/dunst]=~/.config/dunst
   [home/.oh-my-zsh/custom]=~/.oh-my-zsh/custom
+  [home/.vim]=~/.vim
+  [home/.vimrc]=~/.vimrc
 )
 
 mode=$1
