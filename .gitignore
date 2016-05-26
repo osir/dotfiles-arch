@@ -1,0 +1,6 @@
+# Ignore VIm Swap files
+**/*.swp
+
+# Ignore VIm plugins folder
+**/.vim/vundle/*
+
