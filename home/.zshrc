@@ -54,7 +54,7 @@ plugins=(git sudo web-search)
 
 # User configuration
 
-export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/osiris/bin:/home/osiris/bin/td:/home/osiris/bin/wlantest:/home/osiris/bin/mount-usb-drive:/home/osiris/.gem/ruby/2.3.0/bin"
+export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/osiris/bin:/home/osiris/bin/td:/home/osiris/bin/wlantest:/home/osiris/bin/mount-usb-drive:/home/osiris/.gem/ruby/2.3.0/bin:/home/osiris/bin/burp-suite"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
