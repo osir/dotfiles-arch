@@ -1,12 +1,11 @@
 # general
 # -------
-alias ll="ls -lAh --color=auto --group-directories-first"
-alias ls="ls -lh --color=auto --group-directories-first"
+alias ll="\ls -lAh --color=auto --group-directories-first"
+alias ls="\ls -lh --color=auto --group-directories-first"
 alias l="ll"
 
 alias vi="vim"
 alias shutdown="sudo \shutdown -h now"
-alias wlanmac="cat /sys/class/net/wlp4s0/address"
 
 alias count="wc -l"
 alias battery-status='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|time\ to\ full|percentage"'

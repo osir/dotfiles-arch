@@ -1,9 +1,3 @@
-# Reads stdin from parameters and returns stripped string in stdout
-stripSpecialCharacters ()
-{
-   sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" >&1
-}
-
 # Searches files in Directory for lines matching the Pattern and prints them to stdout
 # Params: pattern, [directory]
 find-lines()
@@ -52,9 +46,23 @@ add-path(){
 }
 
 # Sets the MAC Address of Wifi Interface
-# Params: (wip) [mac], [interface]
+# Params: [mac], [interface]
 fake-mac() {
-    macchanger --mac=00:12:34:56:78:90 wlp4s0;
+    if [ "$1" != "" ]; then
+        local new_mac="$1";
+    else
+        local new_mac="00:12:34:56:78:90";
+    fi
+    if [ "$2" != "" ]; then
+        local interface="$2";
+    else
+        local interface="wlp4s0";
+    fi
+    if [ "$new_mac" != "rand" ]; then
+        macchanger -A "$interface";
+    else
+        macchanger --mac="$new_mac" "$interface";
+    fi
 }
 
 # Searches for a process with a regex
