@@ -1,8 +1,11 @@
+dotfiles_dir=/home/osiris/repos/dotfiles
 declare -A links=( 
   [home/.Xresources]=~/.Xresources
+  [home/.xprofile]=~/.xprofile
   [home/.zshrc]=~/.zshrc
   [home/.config/i3]=~/.config/i3
   [home/.config/dunst]=~/.config/dunst
+  [home/.config/lightdm]=~/.config/lightdm
   [home/.oh-my-zsh/custom]=~/.oh-my-zsh/custom
   [home/.vim]=~/.vim
   [home/.vimrc]=~/.vimrc
