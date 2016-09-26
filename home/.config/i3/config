@@ -228,7 +228,7 @@ bindsym $mod+shift+y exec xdotool mousemove 960 540
 # autoexec
 
 # set the wallpaper image
-exec_always feh --bg-scale /home/osiris/.wallpapers/monokai-blank.jpg
+exec_always feh --bg-scale /home/osiris/.wallpapers/wallpaper.png
 
 # fade between workspaces
 # CG to disable shadows
