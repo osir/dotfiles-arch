@@ -59,9 +59,9 @@ fake-mac() {
         local interface="wlp4s0";
     fi
     if [ "$new_mac" != "rand" ]; then
-        sudo macchanger -A "$interface";
-    else
         sudo macchanger --mac="$new_mac" "$interface";
+    else
+        sudo macchanger -A "$interface";
     fi
 }
 
