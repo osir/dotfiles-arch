@@ -50,6 +50,9 @@ Plugin 'editorconfig/editorconfig-vim'
 " RAINBOW
 Plugin 'luochen1990/rainbow'
 
+" Vim Go
+Plugin 'fatih/vim-go'
+
 call vundle#end()
 filetype plugin indent on
 

@@ -31,7 +31,7 @@ HYPHEN_INSENSITIVE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -81,6 +81,10 @@ if [ "$DESKTOP_SESSION" != "" ]; then
 else
     export BROWSER="/usr/bin/elinks"
 fi
+
+export VISUAL="vim"
+export GOPATH="${HOME}/repos/go"
+export ICU_DATA="/usr/local/share/icudt58l.dat"
 
 # display battery status
 # printf "%s\n" "BATTERY STATUS:"
