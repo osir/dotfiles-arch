@@ -41,9 +41,6 @@ Plugin 'mhinz/vim-startify'
 let g:startify_bookmarks = [ '~/.bashrc', '~/.vimrc' ]
 let g:startify_skiplist = [ 'COMMIT_EDITMSG' ]
 
-" EDITORCONFIG editorconfig file support
-Plugin 'editorconfig/editorconfig-vim'
-
 " NUMBERS improves line numbers
  Plugin 'myusuf3/numbers.vim'
 
