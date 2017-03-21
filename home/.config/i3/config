@@ -204,13 +204,20 @@ bar {
 }
 
 # lock the screen
-bindsym $mod+shift+x mode "default"; exec ~/.config/i3/lock.sh
+bindsym $mod+shift+x mode "default"; exec ~/.config/i3/scripts/lock.sh
 
 # Shutdown
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym $mod+shift+s exec gksudo "shutdown -h now" 
 
-# Audio Mixer
+# Audio Controls
 bindsym $mod+shift+a exec $terminal -e 'alsamixer'
+
+# Light Controls
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
 
 focus_follows_mouse no
 
@@ -219,8 +226,8 @@ bindsym $mod+p       exec scrot ~/screenshots/$(date +"%a-%d-%b-%H:%M:%S.jpg")
 bindsym $mod+shift+p exec scrot -s ~/screenshots/$(date +"%a-%d-%b-%H:%M:%S.jpg")
 
 # make mod+b hide the cursor in the top right corner
-bindsym $mod+y       exec xdotool mousemove 2560 0
-bindsym $mod+shift+y exec xdotool mousemove 1280 720
+bindsym $mod+shift+y       exec xdotool mousemove 2560 0
+bindsym $mod+y exec xdotool mousemove 1280 720
 
 # autoexec
 
@@ -229,3 +236,6 @@ exec_always feh --bg-scale /home/osiris/.wallpapers/wallpaper.png
 
 exec --no-startup-id compton -b
 exec --no-startup-id dunst
+
+exec --no-startup-id nm-applet
+
