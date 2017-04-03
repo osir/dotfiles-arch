@@ -1,11 +1,23 @@
 #!/usr/bin/env bash
 
-icon="$HOME/.config/i3/lockicon.png"
-tmpbg='/tmp/screen.png'
+img='/tmp/screen.png'
 
-(( $# )) && { icon=$1; }
+while [ "$1" ]; do
+    case "$1" in
+        *screenshot*)
+            scrot "$img"
+            ;;
+        *pixelate*)
+            convert "$img" -scale 10% -scale 1000% "$img"
+            ;;
+        *icon*)
+            icon="$HOME/.config/i3/lockicon.png"
+            convert "$img" "$icon" -gravity center -composite -matte "$img"
+            ;;
+        *lock*)
+            i3lock -i "$img"
+            ;;
+    esac
+    shift
+done
 
-scrot "$tmpbg"
-convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
-# convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-i3lock -i "$tmpbg"
