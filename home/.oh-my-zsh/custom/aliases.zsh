@@ -13,6 +13,9 @@ alias bat='cat /sys/class/power_supply/BAT0/capacity'
 
 alias terminal="urxvtc -fn 'xft:Ubuntu Mono derivative Powerline:size=12:style=regular'"
 
+alias syyu='sudo pacman -Syyu'
+alias s='sudo pacman -S'
+
 # services / daemons
 # ------------------
 
