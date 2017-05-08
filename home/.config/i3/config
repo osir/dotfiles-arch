@@ -127,10 +127,6 @@ bindsym $mod+Shift+8 move container to workspace $wspace8
 bindsym $mod+Shift+9 move container to workspace $wspace9
 bindsym $mod+Shift+0 move container to workspace $wspace10
 
-# assign programms to workspaces
-assign [class="Steam"] $wspace5
-
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -215,8 +211,8 @@ bindsym $mod+shift+s exec "shutdown -h now"
 # Audio Controls
 bindsym $mod+shift+a exec $terminal -e 'alsamixer'
 
-# Light Controls
-bindsym XF86MonBrightnessUp exec light -A 10
+# Brightnes/Light Controls
+bindsym XF86MonBrightnessUp   exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
 
 focus_follows_mouse no
