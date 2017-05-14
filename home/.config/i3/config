@@ -92,16 +92,16 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # workspace names
-set $wspace1 "1:I"
-set $wspace2 "2:II"
-set $wspace3 "3:III"
-set $wspace4 "4:IV"
-set $wspace5 "5:V"
-set $wspace6 "6:VI"
-set $wspace7 "7:VII"
-set $wspace8 "8:VIII"
-set $wspace9 "9:IX"
-set $wspace10 "10:X"
+set $wspace1 "1:Ⅰ"
+set $wspace2 "2:Ⅱ"
+set $wspace3 "3:Ⅲ"
+set $wspace4 "4:Ⅳ"
+set $wspace5 "5:Ⅴ"
+set $wspace6 "6:Ⅵ"
+set $wspace7 "7:Ⅶ"
+set $wspace8 "8:Ⅷ"
+set $wspace9 "9:Ⅸ"
+set $wspace10 "10:Ⅹ"
 
 # switch to workspace
 bindsym $mod+1 workspace $wspace1
