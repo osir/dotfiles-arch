@@ -97,7 +97,7 @@ tree() {
 # Teleports to a corresponding link in ~/tp/
 # Params: [link name]
 tp() {
-    local linkdir="$HOME/tp"
+    local linkdir="$HOME/.tp"
     local target="$1"
     if [ -z "$target" ]; then
         \ls -1 "$linkdir"

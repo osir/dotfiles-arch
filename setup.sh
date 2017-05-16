@@ -1,16 +1,17 @@
 dotfiles_dir=/home/osiris/repos/dotfiles
 declare -A links=( 
-  [home/.Xresources]=~/.Xresources
-  [home/.xprofile]=~/.xprofile
-  [home/.zshrc]=~/.zshrc
-  [home/.config/i3]=~/.config/i3
-  [home/.config/dunst]=~/.config/dunst
-  [home/.config/lightdm]=~/.config/lightdm
   [home/.config/compton.conf]=~/.config/compton.conf
-  [home/.oh-my-zsh/custom/functions.zsh]=~/.oh-my-zsh/custom/functions.zsh
+  [home/.config/dunst]=~/.config/dunst
+  [home/.config/i3]=~/.config/i3
+  [home/.config/lightdm]=~/.config/lightdm
   [home/.oh-my-zsh/custom/aliases.zsh]=~/.oh-my-zsh/custom/aliases.zsh
-  [home/.vim]=~/.vim
+  [home/.oh-my-zsh/custom/functions.zsh]=~/.oh-my-zsh/custom/functions.zsh
+  [home/.tp]=~/.tp
   [home/.vimrc]=~/.vimrc
+  [home/.vim]=~/.vim
+  [home/.xprofile]=~/.xprofile
+  [home/.Xresources]=~/.Xresources
+  [home/.zshrc]=~/.zshrc
 )
 
 cd "$dotfiles_dir" || exit 1
