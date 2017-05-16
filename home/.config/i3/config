@@ -225,6 +225,9 @@ bindsym $mod+shift+p exec scrot -s ~/screenshots/$(date +"%a-%d-%b-%H:%M:%S.jpg"
 bindsym $mod+shift+y       exec xdotool mousemove 2560 0
 bindsym $mod+y exec xdotool mousemove 1280 720
 
+# open file manager
+bindsym $mod+q exec $terminal -e 'vifm'
+
 # autoexec
 
 # set the wallpaper image

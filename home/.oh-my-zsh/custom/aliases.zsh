@@ -20,10 +20,13 @@ alias s='sudo pacman -S'
 # ------------------
 
 # SSH
-alias sshoff="sudo systemctl stop sshd.service"
-alias sshon="sudo systemctl start sshd.service"
+alias sshoff='sudo systemctl stop sshd.service'
+alias sshon='sudo systemctl start sshd.service'
 
 # other
 # -----
-alias öö="sl"
-alias ös="sl"
+alias öö='sl'
+alias ös='sl'
+
+alias fm='vifm . ~'
+
