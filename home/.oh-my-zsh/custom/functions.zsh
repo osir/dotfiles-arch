@@ -93,3 +93,16 @@ tree() {
     fi
     echo
 }
+
+# Teleports to a corresponding link in ~/tp/
+# Params: [link name]
+tp() {
+    local linkdir="$HOME/tp"
+    local target="$1"
+    if [ -z "$target" ]; then
+        printf '%s\n' "Please supply a link name!"
+        return 1
+    fi
+    cd $(head -n 1 "$linkdir/$target"*) || return 2
+}
+
