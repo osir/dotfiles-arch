@@ -100,8 +100,8 @@ tp() {
     local linkdir="$HOME/tp"
     local target="$1"
     if [ -z "$target" ]; then
-        printf '%s\n' "Please supply a link name!"
-        return 1
+        \ls -1 "$linkdir"
+        return 0
     fi
     cd $(head -n 1 "$linkdir/$target"*) || return 2
 }
