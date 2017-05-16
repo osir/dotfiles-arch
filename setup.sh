@@ -1,34 +1,45 @@
-dotfiles_dir=/home/osiris/repos/dotfiles
-declare -A links=( 
-  [home/.config/compton.conf]=~/.config/compton.conf
-  [home/.config/dunst]=~/.config/dunst
-  [home/.config/i3]=~/.config/i3
-  [home/.config/lightdm]=~/.config/lightdm
-  [home/.oh-my-zsh/custom/aliases.zsh]=~/.oh-my-zsh/custom/aliases.zsh
-  [home/.oh-my-zsh/custom/functions.zsh]=~/.oh-my-zsh/custom/functions.zsh
-  [home/.tp]=~/.tp
-  [home/.vimrc]=~/.vimrc
-  [home/.vim]=~/.vim
-  [home/.xprofile]=~/.xprofile
-  [home/.Xresources]=~/.Xresources
-  [home/.zshrc]=~/.zshrc
-)
+#!/usr/bin/env bash
 
-cd "$dotfiles_dir" || exit 1
+readonly config="${0%/*}/setupconfig.sh"
+source "$config"
 
-mode=$1
-if [ "$mode" = "clean" ]; then
-  echo "Removing links:"
-  for i in "${!links[@]}"
-  do
-  echo "rm ${links[$i]}"
-    rm ${links[$i]}
-  done
-else
-  echo "creating links:"
-  for i in "${!links[@]}"
-  do
-    echo "$PWD/$i -> ${links[$i]}"
-    ln -s $PWD/$i ${links[$i]}
-  done
-fi
+main() {
+    cd "$dotfiles_dir" || exit 1
+    local mode="$1"
+
+    case "$mode" in
+        'link'|'Link')
+            echo 'Creating links:'
+            for i in "${!links[@]}"; do
+                local src="$i"
+                local dest="${links[$i]}"
+                if [ -L "$dest" ]; then
+                    printf '[INFO] Skiping existing link: %s\n' "$dest"
+                    continue
+                fi
+                printf '[INFO] Linking: %s => %s\n' "$src" "$dest"
+                ln --symbolic "$PWD/$src" "$dest"
+            done
+            ;;
+        'clean'|'Clean')
+            echo 'Removing links:'
+            for i in "${!links[@]}"; do
+                local link="${links[$i]}"
+                printf '[INFO] Removing: %s\n' "$link"
+                if [ -L "$link" ]; then
+                    rm --verbose "$link"
+                fi
+            done
+            ;;
+        *)
+            printf 'Unknown option "%s".\n' "$mode"
+            printf 'Usage: setup.sh {link|clean}\n'
+            printf '\nOptions:\n'
+            printf '\t%s\t%s\n' 'link:'  'Links files to installation destinations'
+            printf '\t%s\t%s\n' 'clean:' 'Removes created files'
+            ;;
+    esac
+}
+
+main $*
+
