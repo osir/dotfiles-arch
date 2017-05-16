@@ -100,7 +100,9 @@ tp() {
     local linkdir="$HOME/.tp"
     local target="$1"
     if [ -z "$target" ]; then
-        \ls -1 "$linkdir"
+        for f in "$linkdir/"*; do
+            printf '%s\t%s\n' "${f##*/}" $( head -n 1 $f )
+        done
         return 0
     fi
     cd $(head -n 1 "$linkdir/$target"*) || return 2
