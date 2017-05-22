@@ -1,12 +1,14 @@
-# dotfiles
+# Dotfiles
 A place to keep track of my dotfiles.  
 
-### quick setup
+### Quick setup
 ```
 # chomd +x setup.sh
 $ ./setup.sh link
 ```
-Use `$ ./setup.sh clean` to remove all created links.  
 
-The `.xinitrc` will *not* be installed by the setup script.  
-To install the plugins for vim type `:PluginInstall`  
+### Notes
+
+- Use `$ ./setup.sh clean` to remove all created links (see `./setup.sh --help` for details).  
+- The `.xinitrc` will *not* be installed by the setup script.  
+- To install the plugins for vim, open vim and run `:PluginInstall`  
