@@ -18,6 +18,9 @@ main() {
             setup_clean
             setup_links
             ;;
+        *'--help'*)
+            print_help
+            ;;
         *)
             printf 'Unknown option "%s".\n\n' "$mode"
             print_help
@@ -55,7 +58,7 @@ print_help() {
     printf '\nOptions:\n'
     printf '\t%s\t%s\n' 'link:'   'Links files to installation destinations'
     printf '\t%s\t%s\n' 'clean:'  'Removes created files'
-    printf '\t%s\t%s\n' 'relink:' 'Removes created files and creates new links'
+    printf '\t%s\t%s\n' 'relink:' 'Removes created files and creates new links (clean and link)'
 }
 
 main $*
