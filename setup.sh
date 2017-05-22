@@ -45,7 +45,7 @@ setup_clean() {
         local link="${links[$i]}"
         printf '[INFO] Removing: %s\n' "$link"
         if [ -L "$link" ]; then
-            rm --verbose "$link"
+            rm "$link"
         fi
     done
 }
