@@ -3,8 +3,7 @@ A place to keep track of my dotfiles.
 
 ### Quick setup
 ```
-# chomd +x setup.sh
-$ ./setup.sh link
+$ bash ./setup.sh link
 ```
 
 ### Notes
