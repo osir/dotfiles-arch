@@ -73,27 +73,6 @@ psfind() {
         | grep -e "${regex}"
 }
 
-# Shows a graphical representation of the current sub-directories
-# Params: [base dir]
-tree() {
-    echo
-    if [ "$1" != "" ]  #if parameter exists, use as base folder
-    then cd "$1"
-    fi
-    pwd
-    ls -R | grep ":$" |   \
-    sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
-    # 1st sed: remove colons
-    # 2nd sed: replace higher level folder names with dashes
-    # 3rd sed: indent graph three spaces
-    # 4th sed: replace first dash with a vertical bar
-
-    if [ $(ls -F -1 | grep "/" | wc -l) = 0 ]   # check if no folders
-    then echo "   -> no sub-directories"
-    fi
-    echo
-}
-
 # Teleports to a corresponding link in ~/tp/
 # Params: [link name]
 tp() {
@@ -106,5 +85,29 @@ tp() {
         return 0
     fi
     cd $(head -n 1 "$linkdir/$target"*) || return 2
+}
+
+# Links an executable to a directory that is in $PATH
+# Params: executable [link name]
+lnpath() {
+    local pathdir='/usr/bin'
+    if [ -z "$1" ]; then
+        echo "Usage: lnpath <executable> [link name]"
+        return 1
+    else
+        local executable=$( realpath "$1" )
+    fi
+    if [ -z "$2" ]; then
+        local target="$pathdir/${executable##*/}"
+    else
+        local target="$pathdir/$2"
+    fi
+
+    if [ -e "$target" ]; then
+        printf '%s already exists\n' "$target"
+        return 1
+    fi
+
+    sudo ln -s "$executable" "$target"
 }
 
