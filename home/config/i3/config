@@ -218,8 +218,7 @@ bindsym XF86MonBrightnessDown exec light -U 10
 focus_follows_mouse no
 
 # make mod+p take a screenshot
-bindsym $mod+p       exec scrot ~/screenshots/$(date +"%a-%d-%b-%H:%M:%S.jpg")
-bindsym $mod+shift+p exec scrot -s ~/screenshots/$(date +"%a-%d-%b-%H:%M:%S.jpg")
+bindsym $mod+p       exec "scrot ~/screenshots/%a-%d-%b-%H:%M:%S.jpg; notify-send -t 500 'Screenshot saved' $(date +'%a-%d-%b-%H:%M:%S.jpg')"
 
 # make mod+b hide the cursor in the top right corner
 bindsym $mod+shift+y       exec xdotool mousemove 2560 0
@@ -231,7 +230,7 @@ bindsym $mod+q exec $terminal -e 'vifm'
 # autoexec
 
 # set the wallpaper image
-exec_always feh --bg-scale /home/osiris/.wallpapers/wallpaper.png
+exec_always feh --bg-scale "$HOME/.wallpapers/wallpaper.png"
 
 exec --no-startup-id compton -b
 exec --no-startup-id dunst
