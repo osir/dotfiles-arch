@@ -2,12 +2,12 @@
 # Params: pattern, [directory]
 find-lines()
 {
-    if [ -z "$1" ]; then
-        echo "Usage: findLines <pattern> [directory]"
-    elif [ -z "$2" ]; then
-        grep -Irnw '.' -e $1
+    if [[ -z "$1" ]]; then
+        echo "Usage: find-lines <pattern> [directory]"
+    elif [[ -z "$2" ]]; then
+        grep -Irnw '.' -e "$1"
     else
-        grep -Irnw $2 -e $1
+        grep -Irnw "$2" -e "$1"
     fi
 }
 
@@ -15,20 +15,20 @@ find-lines()
 # Params: directory name
 mkcd()
 {
-    if [ -z "$*" ]; then
+    if [[ -z "$*" ]]; then
         echo "Usage: mkcd <directory name>"
         return 1
     fi
-    dir="$*";
+    local dir="$*";
     mkdir -p "$dir" && cd "$dir";
 }
 
 # Clones a repository from github
-# Params: repository owner, repository name
-gh-clone()
+# Params: repository owner repository name
+ghcl()
 {
-    if [ -z "$*" ]; then
-        echo "Usage: gh-clone <repository owner> <repository name>"
+    if [[ -z "$*" ]]; then
+        echo "Usage: gh-cl<repository owner> <repository name>"
         return 1;
     fi
     local url="https://github.com/$1/$2"
@@ -38,7 +38,7 @@ gh-clone()
 #
 #
 add-path(){
-    if [ -z "$*" ]; then
+    if [[ -z "$*" ]]; then
         echo "Usage: add-path <path/to/program> <programname>";
         return 1;
     fi
@@ -48,17 +48,17 @@ add-path(){
 # Sets the MAC Address of Wifi Interface
 # Params: [mac], [interface]
 fake-mac() {
-    if [ "$1" != "" ]; then
+    if [[ "$1" != "" ]]; then
         local new_mac="$1";
     else
         local new_mac="00:12:34:56:78:90";
     fi
-    if [ "$2" != "" ]; then
+    if [[ "$2" != "" ]]; then
         local interface="$2";
     else
         local interface="wlp4s0";
     fi
-    if [ "$new_mac" != "rand" ]; then
+    if [[ "$new_mac" != "rand" ]]; then
         sudo macchanger --mac="$new_mac" "$interface";
     else
         sudo macchanger -A "$interface";
@@ -78,7 +78,7 @@ psfind() {
 tp() {
     local linkdir="$HOME/.tp"
     local target="$1"
-    if [ -z "$target" ]; then
+    if [[ -z "$target" ]]; then
         for f in "$linkdir/"*; do
             printf '%s\t%s\n' "${f##*/}" $( head -n 1 $f )
         done
@@ -91,19 +91,19 @@ tp() {
 # Params: executable [link name]
 lnpath() {
     local pathdir='/usr/bin'
-    if [ -z "$1" ]; then
+    if [[ -z "$1" ]]; then
         echo "Usage: lnpath <executable> [link name]"
         return 1
     else
         local executable=$( realpath "$1" )
     fi
-    if [ -z "$2" ]; then
+    if [[ -z "$2" ]]; then
         local target="$pathdir/${executable##*/}"
     else
         local target="$pathdir/$2"
     fi
 
-    if [ -e "$target" ]; then
+    if [[ -e "$target" ]]; then
         printf '%s already exists\n' "$target"
         return 1
     fi
