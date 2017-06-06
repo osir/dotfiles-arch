@@ -111,3 +111,20 @@ lnpath() {
     sudo ln -s "$executable" "$target"
 }
 
+# converts a ssh:// url to an ssh command
+# Params: url [username]
+ussh() {
+    local url="$1"
+    local user="$2"
+    local cmd=''
+    if [[ "$url" != 'ssh://'* ]]; then
+        echo 'Invalid URL, has to start with ssh://'
+        return 1
+    fi
+    cmd=$( sed -e 's/:[/]\+/ /' -e 's/:/ -p/' <<< "$url" )
+    if [[ -n "$user" ]]; then
+        cmd=$( sed "s/ssh\s/ssh $user@/" <<< "$cmd" )
+    fi
+    eval "$cmd"
+}
+
