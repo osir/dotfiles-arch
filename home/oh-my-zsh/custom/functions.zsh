@@ -24,7 +24,7 @@ mkcd()
 }
 
 # Clones a repository from github
-# Params: repository owner repository name
+# Params: repository owner, repository name
 ghcl()
 {
     if [[ -z "$*" ]]; then
@@ -33,16 +33,6 @@ ghcl()
     fi
     local url="https://github.com/$1/$2"
     git clone $url
-}
-
-#
-#
-add-path(){
-    if [[ -z "$*" ]]; then
-        echo "Usage: add-path <path/to/program> <programname>";
-        return 1;
-    fi
-    sudo ln -s `realpath $1` "/usr/local/bin/$2";
 }
 
 # Sets the MAC Address of Wifi Interface
@@ -88,7 +78,7 @@ tp() {
 }
 
 # Links an executable to a directory that is in $PATH
-# Params: executable [link name]
+# Params: executable, [link name]
 lnpath() {
     local pathdir='/usr/bin'
     if [[ -z "$1" ]]; then
@@ -112,7 +102,7 @@ lnpath() {
 }
 
 # converts a ssh:// url to an ssh command
-# Params: url [username]
+# Params: url, [username]
 ussh() {
     local url="$1"
     local user="$2"
