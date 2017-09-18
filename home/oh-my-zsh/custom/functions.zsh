@@ -118,3 +118,18 @@ ussh() {
     eval "$cmd"
 }
 
+# Starts pythons http server on the given directory
+# Params: [dir], [port]
+http() {
+    local back=$(pwd)
+    local port='8080'
+    if [[ -n "$1" ]]; then
+        cd "$1"
+    fi
+    if [[ -n "$2" ]]; then
+        port="$2"
+    fi
+    python3 -m http.server "$port"
+    cd "$back"
+}
+
