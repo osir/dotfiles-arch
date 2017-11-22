@@ -8,11 +8,16 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
+" VUNDLE plugin manager
 Plugin 'VundleVim/Vundle.vim'
 
 " SYNTASTIV syntax checker
 Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 " NERDTREE file browser
 Plugin 'scrooloose/nerdtree'
@@ -47,6 +52,9 @@ let g:startify_skiplist = [ 'COMMIT_EDITMSG' ]
 " RAINBOW
 Plugin 'luochen1990/rainbow'
 
+" NERDcommenter
+Plugin 'scrooloose/nerdcommenter'
+
 " Vim Go
 Plugin 'fatih/vim-go'
 
@@ -54,4 +62,4 @@ call vundle#end()
 filetype plugin indent on
 
 " End Vundle Config
-" ---------------------------------------------------------------------------
+
