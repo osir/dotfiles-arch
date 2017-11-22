@@ -2,7 +2,7 @@
 **/*.swp
 
 # Ignore VIm plugins folder
-**/.vim/vundle/*
+**/vim/vundle/*
 
 # Ignore Chrome design caches
 chrome-monokai/Cached*.pak
