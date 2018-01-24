@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 
-b="$(cat /sys/class/power_supply/BAT0/capacity)"
-if [ "$b" -lt 15 ]; then
-    notify-send --urgency=critical --expire-time=60000 --app-name=BATTERY "Battery is low: $b%"
+c="$(cat /sys/class/power_supply/BAT0/capacity)"
+s="$(cat /sys/class/power_supply/BAT0/status)"
+if [ "$c" -lt 15 ]; then
+    if [ "$s" != 'Charging' ]; then
+        notify-send \
+            --urgency=critical \
+            --expire-time=60000 \
+            --app-name=BATTERY \
+            "Battery is low: $b%"
+    fi
 fi
-if [ "$(cat /sys/class/power_supply/BAT0/status)" == 'Charging' ]; then
-    b="⁺${b}"
+if [ "$s" == 'Charging' ]; then
+    c="⁺${c}"
 fi
-printf '%s%%' "$b"
+printf '%s%%' "$c"
