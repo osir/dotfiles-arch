@@ -1,9 +1,3 @@
 # Ignore VIm Swap files
 **/*.swp
 
-# Ignore VIm plugins folder
-**/vim/vundle/*
-
-# Ignore Chrome design caches
-chrome-monokai/Cached*.pak
-
