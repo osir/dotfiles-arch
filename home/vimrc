@@ -1,7 +1,9 @@
 set nocompatible
 
+
 " Load Vundle Pugins
 """""""""""""""""""""
+
 filetype off
 source ~/.vim/vundleconfig.vim
 filetype plugin indent on
@@ -31,6 +33,7 @@ set expandtab
 set softtabstop=1
 set shiftwidth=4
 set smarttab
+set breakindent
 
 
 " Navigation
