@@ -11,6 +11,13 @@ alias s='sudo pacman -S'
 alias sshoff='sudo systemctl stop sshd.service'
 alias sshon='sudo systemctl start sshd.service'
 
+# Screen resolutions
+alias 1080p='
+    sudo xrandr --newmode "1080p" 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +hsync;
+    sudo xrandr --addmode "eDP-1" "1080p";
+    xrandr --output "eDP-1" --mode "1080p"'
+alias 1440p=''
+
 # other
 alias fm='vifm . ~'
 alias vi='vim'
