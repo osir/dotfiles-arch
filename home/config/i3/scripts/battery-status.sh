@@ -8,7 +8,7 @@ if [ "$c" -lt 15 ]; then
             --urgency=critical \
             --expire-time=60000 \
             --app-name=BATTERY \
-            "Battery is low: $b%"
+            "Battery is low: $c%"
     fi
 fi
 if [ "$s" == 'Charging' ]; then
