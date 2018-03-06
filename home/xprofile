@@ -1,1 +1,4 @@
 urxvtd --quiet --opendisplay --fork
+xrdb -merge $HOME/.Xresources
+parcellite&
+
