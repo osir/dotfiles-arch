@@ -1,0 +1,40 @@
+! ------------------------------------------------------------------------------
+! General Color theme
+! ------------------------------------------------------------------------------
+
+! special
+*.foreground:   #f8f8f2
+*.background:   #272822
+*.cursorColor:  #f8f8f2
+
+! black
+*.color0:       #272822
+*.color8:       #75715e
+
+! red
+*.color1:       #f92672
+*.color9:       #f92672
+
+! green
+*.color2:       #a6e22e
+*.color10:      #a6e22e
+
+! yellow
+*.color3:       #f4bf75
+*.color11:      #f4bf75
+
+! blue
+*.color4:       #66d9ef
+*.color12:      #66d9ef
+
+! magenta
+*.color5:       #181814
+*.color13:      #ae81ff
+
+! cyan
+*.color6:       #fd971f
+*.color14:      #fd971f
+
+! white
+*.color7:       #c0c0c0
+*.color15:      #c0c0c0

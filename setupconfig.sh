@@ -13,6 +13,7 @@ declare -A links=(
   [home/vim]=~/.vim
   [home/xprofile]=~/.xprofile
   [home/xresources]=~/.Xresources
+  [home/xres]=~/.xres
   [home/zshrc]=~/.zshrc
 )
 
