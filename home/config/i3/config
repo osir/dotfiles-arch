@@ -191,6 +191,14 @@ bindsym $mod+shift+s exec "i3-nagbar -t warning -m 'Ragequit?' -b 'rq' 'shutdown
 bindsym $mod+q       exec 'thunar'
 bindsym $mod+shift+a exec $terminal -e 'alsamixer'
 
+# Dropdown terminal
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 1300 800
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 5
+exec --no-startup-id $terminal -name dropdown
+bindsym $mod+u       [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+
 # Brightnes/Light Controls
 bindsym XF86MonBrightnessUp   exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
