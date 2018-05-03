@@ -126,15 +126,15 @@ bindsym $mod+p                     exec "scrot --quality 100 ~/screenshots/%a-%d
 bindsym $mod+shift+s               exec "bash ~/.config/i3/scripts/shutdown.sh"
 
 # Window Resize
-bindsym $mod+Left                  resize shrink width  20 px or 20 ppt
-bindsym $mod+Right                 resize grow   height 20 px or 20 ppt
-bindsym $mod+Down                  resize grow   width  20 px or 20 ppt
-bindsym $mod+Up                    resize shrink height 20 px or 20 ppt
+bindsym $mod+Left                  resize shrink width  10 px or 10 ppt
+bindsym $mod+Down                  resize grow   height 10 px or 10 ppt
+bindsym $mod+Up                    resize shrink height 10 px or 10 ppt
+bindsym $mod+Right                 resize grow   width  10 px or 10 ppt
 
-bindsym $mod+shift+Right           resize grow   height  5 px or  5 ppt
 bindsym $mod+shift+Left            resize shrink width   5 px or  5 ppt
-bindsym $mod+shift+Down            resize grow   width   5 px or  5 ppt
+bindsym $mod+shift+Down            resize grow   height  5 px or  5 ppt
 bindsym $mod+shift+Up              resize shrink height  5 px or  5 ppt
+bindsym $mod+shift+Right           resize grow   width   5 px or  5 ppt
 
 # Window movement
 bindsym $mod+h                     exec i3-msg border pixel 1; focus left
