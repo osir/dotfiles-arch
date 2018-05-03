@@ -41,6 +41,11 @@ set breakindent
 
 set backspace=indent,eol,start
 
+" Search
+"""""""""""""""""""""
+
+set smartcase
+set ignorecase
 
 " Syntastic config
 """""""""""""""""""""
