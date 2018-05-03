@@ -24,7 +24,7 @@ URxvt.internalBorder: 0
 URxvt.externalBorder: 0
 URxvt.borderLess: false
 URxvt.urgentOnBell: true
-URxvt.visualBell: true
+URxvt.visualBell: false
 
 URxvt.thickness: 0
 URxvt.scrollBar: false
