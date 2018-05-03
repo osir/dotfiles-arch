@@ -58,6 +58,9 @@ Plugin 'scrooloose/nerdcommenter'
 " Vim Go
 Plugin 'fatih/vim-go'
 
+" Vim LaTeX
+Plugin 'vim-latex/vim-latex'
+
 call vundle#end()
 filetype plugin indent on
 
