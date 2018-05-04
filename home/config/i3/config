@@ -7,7 +7,7 @@
 #  fancy af edition            |/       \|
 
 ##---------
-# Variables
+# VARIABLES
 ##---------
 
 set $terminal urxvtc -fn 'xft:Ubuntu Mono derivative Powerline:pixelsize=21'
@@ -37,7 +37,7 @@ set $yellow #E6DB74
 set $purple #AE81FF
 
 ##--------------
-# Other Settings
+# OTHER SETTINGS
 ##--------------
 
 floating_modifier       $mod
@@ -54,7 +54,7 @@ client.unfocused        $black  $black $white  $black    $black
 client.background       #ff0000
 
 ##---------------
-# Special Windows
+# SPECIAL WINDOWS
 ##---------------
 
 for_window [instance="dropdown"] floating enable
@@ -68,7 +68,7 @@ for_window [instance="sound"] move scratchpad
 exec --no-startup-id $terminal -name sound -e alsamixer
 
 ##---
-# Bar
+# BAR
 ##---
 
 bar {
@@ -88,7 +88,7 @@ bar {
 }
 
 ##----
-# Keys
+# KEYS
 ##----
 
 # Meta
@@ -179,7 +179,7 @@ bindsym $mod+shift+9               move container to workspace $wspace9
 bindsym $mod+shift+0               move container to workspace $wspace10
 
 ##------------------
-# Autostart programs
+# AUTOSTART PROGRAMS
 ##------------------
 
 exec_always feh --bg-scale "$HOME/.wallpapers/wallpaper.png"
