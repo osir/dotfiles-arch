@@ -1,5 +1,5 @@
 set nocompatible
-
+let mapleader = " "
 
 " Load Vundle Pugins
 """""""""""""""""""""
@@ -53,4 +53,10 @@ set ignorecase
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" Sent keys
+"""""""""""""""""""""
+
+map <leader>s :!sent<space><C-r>% 2>/dev/null &<CR><CR>
+map <leader>v $F@ly$:!feh --scale-down --auto-zoom --image-bg black <c-r>" &<CR><CR>
 
