@@ -47,7 +47,7 @@ hide_edge_borders       both
 font                    pango:System San Francisco Display 14
 
 # class                 border  bg.    text    indicator child_border
-client.focused          $black  $black $green  $blue     $blue
+client.focused          $black  $black $green  $yellow   $yellow
 client.focused_inactive $black  $black $blue   $black    $black
 client.unfocused        $black  $black $white  $black    $black
 
