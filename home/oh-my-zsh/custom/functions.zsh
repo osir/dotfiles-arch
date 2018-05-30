@@ -33,6 +33,7 @@ ghcl()
     fi
     local url="https://github.com/$1/$2"
     git clone $url
+    cd "$2"
 }
 
 # Sets the MAC Address of Wifi Interface
