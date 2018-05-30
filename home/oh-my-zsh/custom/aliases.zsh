@@ -1,7 +1,6 @@
 # ls
+alias  l="\ls -lh --color=auto --group-directories-first"
 alias ll="\ls -lAh --color=auto --group-directories-first"
-alias ls="\ls -lh --color=auto --group-directories-first"
-alias l='ll'
 
 # pacman
 alias syyu='sudo pacman -Syyu'
