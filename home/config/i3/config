@@ -150,23 +150,15 @@ bindsym $mod+shift+Up              resize shrink height  1 px or  1 ppt
 bindsym $mod+shift+Right           resize grow   width   1 px or  1 ppt
 
 # Window movement
-bindsym $mod+h                     exec i3-msg border pixel 1; focus left
-bindsym $mod+j                     exec i3-msg border pixel 1; focus down
-bindsym $mod+k                     exec i3-msg border pixel 1; focus up
-bindsym $mod+l                     exec i3-msg border pixel 1; focus right
-bindsym --release $mod+h           exec i3-msg border pixel 0
-bindsym --release $mod+j           exec i3-msg border pixel 0
-bindsym --release $mod+k           exec i3-msg border pixel 0
-bindsym --release $mod+l           exec i3-msg border pixel 0
+bindsym $mod+h                     focus left
+bindsym $mod+j                     focus down
+bindsym $mod+k                     focus up
+bindsym $mod+l                     focus right
 
-bindsym $mod+shift+h               exec i3-msg border pixel 1; move left
-bindsym $mod+shift+j               exec i3-msg border pixel 1; move down
-bindsym $mod+shift+k               exec i3-msg border pixel 1; move up
-bindsym $mod+shift+l               exec i3-msg border pixel 1; move right
-bindsym --release $mod+shift+h     exec i3-msg border pixel 0
-bindsym --release $mod+shift+j     exec i3-msg border pixel 0
-bindsym --release $mod+shift+k     exec i3-msg border pixel 0
-bindsym --release $mod+shift+l     exec i3-msg border pixel 0
+bindsym $mod+shift+h               move left
+bindsym $mod+shift+j               move down
+bindsym $mod+shift+k               move up
+bindsym $mod+shift+l               move right
 
 # Workspaces
 bindsym $mod+s                     exec "bash ~/.config/i3/scripts/wschange.sh $customws"
