@@ -7,7 +7,12 @@ xcape -e 'Caps_Lock=Escape'
 # Load Xresources
 xrdb -merge $HOME/.Xresources
 
-# Autostart programs
+# Terminal emulator server daemon
 urxvtd --quiet --opendisplay --fork
+
+# Clipboard manager
 parcellite&
+
+# Automatically hide mouse cursor
+unclutter&
 
