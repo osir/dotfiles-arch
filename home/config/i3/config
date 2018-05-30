@@ -60,16 +60,19 @@ client.background       #ff0000
 # Dropdown windows
 for_window [instance="shdropdown"] floating enable
 for_window [instance="shdropdown"] resize set 1300 800
+for_window [instance="shdropdown"] border pixel 1
 for_window [instance="shdropdown"] move scratchpad
 exec --no-startup-id $terminal -name shdropdown
 
 for_window [instance="pydropdown"] floating enable
 for_window [instance="pydropdown"] resize set 1300 800
+for_window [instance="pydropdown"] border pixel 1
 for_window [instance="pydropdown"] move scratchpad
 exec --no-startup-id $terminal -name pydropdown -e python3
 
 for_window [instance="sound"] floating enable
 for_window [instance="sound"] resize set 600 800
+for_window [instance="sound"] border pixel 0
 for_window [instance="sound"] move scratchpad
 exec --no-startup-id $terminal -name sound -e alsamixer
 
