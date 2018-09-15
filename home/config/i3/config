@@ -79,9 +79,9 @@ exec --no-startup-id $terminal -name sound -e alsamixer
 # Assign specifig windows
 assign [class="Gimp"] Gimp
 assign [class="Audacity"] Audacity
-assign [class="^VirtualBox Manager$"] VBManager
-assign [class="^VirtualBox Machine$"] VBMachine
-set $customws 'Gimp,Audacity,VBManager,VBMachine'
+assign [class="^VirtualBox Manager$"] VirtualBox
+assign [class="^VirtualBox Machine$"] VirtualBox
+set $customws 'VirtualBox,Gimp,Audacity'
 
 ##---
 # BAR
