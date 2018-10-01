@@ -134,3 +134,12 @@ http() {
     cd "$back"
 }
 
+# Renders a latex file as PDF and displays it
+# Params: file path
+texpreview() {
+    local tex_path="$1"
+    local pdf_path="${1%.tex}.pdf"
+    pdflatex "$tex_path" && \
+        zathura "$pdf_path" &
+}
+
