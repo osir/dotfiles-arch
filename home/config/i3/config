@@ -117,7 +117,7 @@ bindsym $mod+x                     mode "default"; exec "~/.config/i3/scripts/lo
 bindsym $mod+d                     exec $terminal
 bindsym $mod+shift+d               exec $browser
 bindsym $mod+space                 exec "rofi -show run"
-bindsym $mod+p                     exec "scrot --quality 100 ~/screenshots/%a-%d-%b-%H:%M:%S.jpg; notify-send -t 500 'Screenshot saved' $(date +'%a-%d-%b-%H:%M:%S.jpg')"
+bindsym $mod+p                     exec "scrot --quality 100 ~/screenshots/%Y-%m-%dT%H:%M:%S.jpg; notify-send -t 500 'Screenshot saved' $(date +'%Y-%m-%dT%H:%M:%S.jpg')"
 bindsym $mod+shift+s               exec "bash ~/.config/i3/scripts/shutdown.sh"
 bindsym $mod+u                     [instance="sound"]      scratchpad show; [instance="sound"]      move position center
 bindsym $mod+i                     [instance="shdropdown"] scratchpad show; [instance="shdropdown"] move position center
