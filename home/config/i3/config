@@ -89,7 +89,8 @@ set $customws 'VirtualBox,Gimp,Audacity'
 
 bar {
     position top
-    tray_output primary
+    #tray_output primary
+    tray_output eDP-1
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     strip_workspace_numbers yes
     colors {
