@@ -44,7 +44,7 @@ floating_modifier       $mod
 focus_follows_mouse     no
 new_window              none
 hide_edge_borders       both
-font                    pango:System San Francisco Display 10
+font                    pango:System San Francisco Display 15
 
 # class                 border  bg.    text    indicator child_border
 client.focused          $black  $black $green  $yellow   $yellow
