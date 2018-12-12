@@ -2,5 +2,5 @@
 
 choices=$(echo "$1" | tr ',' '\n')
 
-i3-msg workspace "$(echo "$choices" | dmenu -i)"
+i3-msg workspace "$(echo "$choices" | rofi -dmenu -p switch -i)"
 

@@ -2,7 +2,7 @@
 
 choices="Shutdown\nReboot\nLogout"
 
-choice=$(echo -e "$choices" | dmenu -i)
+choice=$(echo -e "$choices" | rofi -dmenu -p do -i)
 
 case "$choice" in
     'Shutdown')
