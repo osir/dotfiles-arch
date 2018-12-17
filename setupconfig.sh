@@ -3,6 +3,7 @@
 dotfiles_dir="$HOME/repos/dotfiles"
 declare -A links=(
   [home/config/compton.conf]=~/.config/compton.conf
+  [home/config/emoji.csv]=~/.config/emoji.csv
   [home/config/dunst]=~/.config/dunst
   [home/config/i3]=~/.config/i3
   [home/config/lightdm]=~/.config/lightdm
