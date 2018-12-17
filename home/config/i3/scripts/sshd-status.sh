@@ -2,11 +2,11 @@
 
 case $BLOCK_BUTTON in
     1)
-        notify-send 'SSHD' 'Enabling ssh server...'
+        notify-send -t 1000 'SSHD' 'Enabling ssh server...'
         sudo systemctl start sshd.service
         ;;
     3)
-        notify-send 'SSHD' 'Disabling ssh server...'
+        notify-send -t 1000 'SSHD' 'Disabling ssh server...'
         sudo systemctl stop sshd.service
         ;;
 esac
