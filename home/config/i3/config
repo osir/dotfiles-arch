@@ -89,7 +89,7 @@ set $customws 'VirtualBox,Gimp,Audacity'
 
 bar {
     position top
-    tray_output primary
+    tray_output "primary"
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     strip_workspace_numbers yes
     colors {
@@ -118,6 +118,7 @@ bindsym $mod+shift+d               exec $browser
 bindsym $mod+space                 exec "rofi -show run"
 bindsym $mod+p                     exec "scrot --quality 100 ~/screenshots/%Y-%m-%dT%H:%M:%S.jpg; notify-send -t 500 'Screenshot saved' $(date +'%Y-%m-%dT%H:%M:%S.jpg')"
 bindsym $mod+shift+s               exec "bash ~/.config/i3/scripts/shutdown.sh"
+bindsym $mod+grave                 exec "sh ~/.config/i3/scripts/unicode-menu.sh"
 bindsym $mod+u                     [instance="sound"]      scratchpad show; [instance="sound"]      move position center
 bindsym $mod+i                     [instance="shdropdown"] scratchpad show; [instance="shdropdown"] move position center
 bindsym $mod+o                     [instance="pydropdown"] scratchpad show; [instance="pydropdown"] move position center
