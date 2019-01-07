@@ -137,9 +137,13 @@ http() {
 # Renders a latex file as PDF and displays it
 # Params: file path
 texpreview() {
-    local tex_path="$1"
-    local pdf_path="${1%.tex}.pdf"
-    pdflatex "$tex_path" && \
-        zathura "$pdf_path" &
+    local tmp_dir="$(mktemp -d '/tmp/texprev.XXXX')"
+    local tex_path="$(readlink -f $1)"
+    local pdf_path="$tmp_dir/$(basename -s .tex "$tex_path").pdf"
+
+    pdflatex --output-directory "$tmp_dir" "$tex_path" \
+        && zathura "$pdf_path" &
+
+    printf 'PDF has been exported to %s.\n' "$pdf_path"
 }
 
