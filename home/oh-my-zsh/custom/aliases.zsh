@@ -20,6 +20,7 @@ alias 1440p=''
 # other
 alias             ra='ranger'
 alias             vi='vim'
+alias             se='sudoedit'
 alias             li='light -S'
 alias            ipa='ip --color --brief addr'
 alias            ddg='w3m "https://duckduckgo.com"'
