@@ -1,24 +1,71 @@
-export ZSH=/home/osiris/.oh-my-zsh
-export ZSH_THEME="powerlevel9k/powerlevel9k"
+###########
+# Aliases #
+###########
+
+# ls
+alias  l="\ls -lh --color=auto --group-directories-first"
+alias ll="\ls -lAh --color=auto --group-directories-first"
+
+# pacman
+alias syyu='sudo pacman -Syyu'
+alias    s='sudo pacman -S'
+
+# SSH
+alias sshoff='sudo systemctl stop sshd.service'
+alias  sshon='sudo systemctl start sshd.service'
+
+# Screen resolutions
+alias 1080p='
+    sudo xrandr --newmode "1080p" 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +hsync;
+    sudo xrandr --addmode "eDP-1" "1080p";
+    xrandr --output "eDP-1" --mode "1080p"'
+alias 1440p=''
+
+# other
+alias             ra='ranger'
+alias             vi='nvim'
+alias            vim='nvim'
+alias             se='sudoedit'
+alias             li='light -S'
+alias             yt='youtube-viewer'
+alias            ipa='ip --color --brief addr'
+alias            ddg='w3m "https://duckduckgo.com"'
+alias       terminal='urxvtc -fn "xft:Ubuntu Mono derivative Powerline:size=12:style=regular"'
+alias battery-status='upower -i /org/freedesktop/UPower/devices/battery_BAT0
+                          | grep -E "state|time\ to\ full|percentage"'
+
+
+#############
+# VARIABLES #
+#############
+
+export PS1=$'  \e[1m\e[32m%1~\e[39m\e[0m '
 export HYPHEN_INSENSITIVE="true"
 export ENABLE_CORRECTION="true"
 export COMPLETION_WAITING_DOTS="true"
 export HIST_STAMPS="yyyy-mm-dd"
 export plugins=(sudo)
 
-export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/osiris/bin:/home/osiris/bin/td:/home/osiris/bin/wlantest:/home/osiris/bin/mount-usb-drive:/home/osiris/.gem/ruby/2.3.0/bin:/home/osiris/bin/burp-suite"
+export  BROWSER='/usr/bin/qutebrowser'
+export   VISUAL='nvim'
+export   EDITOR='nvim'
+export    PAGER='vimpager'
+export ICU_DATA='/usr/local/share/icudt58l.dat'
 
+export ZSH=/home/osiris/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-export LANG=en_US.UTF-8
+export      LANG='en_US.UTF-8'
+export        CC='/usr/bin/clang'
+export    GOPATH="${HOME}/repos/go"
+export ARCHFLAGS='-arch x86_64'
 
-export ARCHFLAGS="-arch x86_64"
+export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/osiris/bin:/home/osiris/bin/td:/home/osiris/bin/wlantest:/home/osiris/bin/mount-usb-drive:/home/osiris/.gem/ruby/2.3.0/bin:/home/osiris/bin/burp-suite"
 
-export BROWSER="/usr/bin/qutebrowser"
-export VISUAL="vim"
-export EDITOR="vim"
-export PAGER="vimpager"
-export CC="/usr/bin/clang"
-export GOPATH="${HOME}/repos/go"
-export ICU_DATA="/usr/local/share/icudt58l.dat"
+# Perl
+PATH="/home/osiris/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/osiris/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/osiris/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/osiris/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/osiris/perl5"; export PERL_MM_OPT;
 

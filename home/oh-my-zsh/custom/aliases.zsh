@@ -19,11 +19,14 @@ alias 1440p=''
 
 # other
 alias             ra='ranger'
-alias             vi='vim'
+alias              v='nvim'
+alias             vi='nvim'
+alias            vim='nvim'
 alias             se='sudoedit'
 alias             li='light -S'
+alias             yt='youtube-viewer'
 alias            ipa='ip --color --brief addr'
 alias            ddg='w3m "https://duckduckgo.com"'
 alias       terminal="urxvtc -fn 'xft:Ubuntu Mono derivative Powerline:size=12:style=regular'"
-alias battery-status='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|time\ to\ full|percentage"'
+alias battery-status='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|time\ to\ full|percentage"'
 

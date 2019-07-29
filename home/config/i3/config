@@ -42,14 +42,15 @@ set $purple #AE81FF
 
 floating_modifier       $mod
 focus_follows_mouse     no
-new_window              none
-hide_edge_borders       both
+default_border          pixel 2
+default_floating_border pixel 2
+hide_edge_borders       smart
 font                    pango:System San Francisco Display 15
 
-# class                 border  bg.    text    indicator child_border
-client.focused          $black  $black $green  $yellow   $yellow
-client.focused_inactive $black  $black $blue   $black    $black
-client.unfocused        $black  $black $white  $black    $black
+# class                 border  bg     text    indicator child_border
+client.focused          $black  $black $green  $yellow   $green
+client.focused_inactive $black  $black $blue   $black    #000000
+client.unfocused        $black  $black $white  $black    #000000
 
 client.background       #ff0000
 
@@ -70,11 +71,11 @@ for_window [instance="pydropdown"] border pixel 3
 for_window [instance="pydropdown"] move scratchpad
 exec --no-startup-id $terminal -name pydropdown -e python3
 
-for_window [instance="sound"] floating enable
-for_window [instance="sound"] resize set 600 800
-for_window [instance="sound"] border pixel 0
-for_window [instance="sound"] move scratchpad
-exec --no-startup-id $terminal -name sound -e alsamixer
+for_window [instance="pavucontrol"] floating enable
+for_window [instance="pavucontrol"] resize set 500 600
+for_window [instance="pavucontrol"] border pixel 3
+for_window [instance="pavucontrol"] move scratchpad
+exec --no-startup-id pavucontrol
 
 # Assign specifig windows
 assign [class="Gimp"] Gimp
@@ -89,7 +90,8 @@ set $customws 'VirtualBox,Gimp,Audacity'
 
 bar {
     position top
-    tray_output "primary"
+    tray_output "eDP-1-1"
+    #tray_output "eDP-1"
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     strip_workspace_numbers yes
     colors {
@@ -110,7 +112,8 @@ bar {
 # Meta
 bindsym $mod+shift+c               reload
 bindsym $mod+shift+r               restart
-bindsym $mod+x                     mode "default"; exec "~/.config/i3/scripts/lock.sh screenshot pixelate lock"
+bindsym $mod+x                     mode "default"; exec "~/.config/i3/scripts/lock.sh pixel"
+bindsym $mod+shift+x               mode "default"; exec "~/.config/i3/scripts/lock.sh win"
 
 # Programs
 bindsym $mod+d                     exec $terminal
@@ -119,9 +122,9 @@ bindsym $mod+space                 exec "rofi -show run"
 bindsym $mod+p                     exec "scrot --quality 100 ~/screenshots/%Y-%m-%dT%H:%M:%S.jpg; notify-send -t 500 'Screenshot saved' $(date +'%Y-%m-%dT%H:%M:%S.jpg')"
 bindsym $mod+shift+s               exec "bash ~/.config/i3/scripts/shutdown.sh"
 bindsym $mod+grave                 exec "sh ~/.config/i3/scripts/unicode-menu.sh"
-bindsym $mod+u                     [instance="sound"]      scratchpad show; [instance="sound"]      move position center
-bindsym $mod+i                     [instance="shdropdown"] scratchpad show; [instance="shdropdown"] move position center
-bindsym $mod+o                     [instance="pydropdown"] scratchpad show; [instance="pydropdown"] move position center
+bindsym $mod+u                     [instance="pavucontrol"] scratchpad show; [instance="pavucontrol"] move position center
+bindsym $mod+i                     [instance="shdropdown"]  scratchpad show; [instance="shdropdown"]  move position center
+bindsym $mod+o                     [instance="pydropdown"]  scratchpad show; [instance="pydropdown"]  move position center
 
 # Special keys
 bindsym XF86MonBrightnessUp        exec "light -A 10"
@@ -148,10 +151,10 @@ bindsym $mod+Down                  resize grow   height 5 px or 5 ppt
 bindsym $mod+Up                    resize shrink height 5 px or 5 ppt
 bindsym $mod+Right                 resize grow   width  5 px or 5 ppt
 
-bindsym $mod+shift+Left            resize shrink width   1 px or  1 ppt
-bindsym $mod+shift+Down            resize grow   height  1 px or  1 ppt
-bindsym $mod+shift+Up              resize shrink height  1 px or  1 ppt
-bindsym $mod+shift+Right           resize grow   width   1 px or  1 ppt
+bindsym $mod+shift+Left            resize shrink width  15 px or 15 ppt
+bindsym $mod+shift+Down            resize grow   height 15 px or 15 ppt
+bindsym $mod+shift+Up              resize shrink height 15 px or 15 ppt
+bindsym $mod+shift+Right           resize grow   width  15 px or 15 ppt
 
 # Window movement
 bindsym $mod+h                     focus left

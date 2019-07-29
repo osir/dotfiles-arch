@@ -1,23 +1,22 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-img='/tmp/screen.png'
+MODE="${1:-pixel}"
 
-while [ "$1" ]; do
-    case "$1" in
-        *screenshot*)
-            scrot "$img"
-            ;;
-        *pixelate*)
-            convert "$img" -scale 10% -scale 1000% "$img"
-            ;;
-        *icon*)
-            icon="$HOME/.config/i3/lockicon.png"
-            convert "$img" "$icon" -gravity center -composite -matte "$img"
-            ;;
-        *lock*)
-            i3lock -i "$img"
-            ;;
-    esac
-    shift
-done
+case "$MODE" in
+    'pixel')
+        IMG='/tmp/screen.png'
+        scrot "$IMG"
+        convert "$IMG" -scale 10% -scale 1000% "$IMG"
+        i3lock --image="$IMG" --ignore-empty-password --show-failed-attempts
+        ;;
+    'blank')
+        i3lock --color='272822' --ignore-empty-password --show-failed-attempts
+        ;;
+    'win')
+        WINIMG="$(find /home/osiris/images/windows-desktops/ -type f | shuf -n 1)"
+        i3lock -t --pointer='win' --image="$WINIMG" --no-unlock-indicator
+        ;;
+esac
+
+
 
