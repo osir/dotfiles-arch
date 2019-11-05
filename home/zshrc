@@ -1,3 +1,8 @@
+
+#autoload -U colors && colors
+#HISTSIZE=10000
+#SAVEHIST=10000
+
 ###########
 # Aliases #
 ###########

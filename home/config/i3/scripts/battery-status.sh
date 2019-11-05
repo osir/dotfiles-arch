@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 c="$(cat /sys/class/power_supply/BAT0/capacity)"
 s="$(cat /sys/class/power_supply/BAT0/status)"
@@ -14,4 +14,5 @@ fi
 if [ "$s" == 'Charging' ]; then
     c="⁺${c}"
 fi
-printf '%s%%' "$c"
+printf '%s%%\n' "$c"
+
